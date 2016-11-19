@@ -16,6 +16,19 @@ ihr.factory('playerFactory', ['$q', '$http', 'config', function($q, $http, confi
 			
 			return deferred.promise;
 		},
-		
+		updatePlayer: function(){
+			var deferred = $q.defer();
+			
+			$http.post(this.url + '/' + player.id, player).then(function(responseData) {
+				if(responseData.data.success) {
+					deferred.resolve(responseData);
+				} else {
+					deferred.reject(responseData.data.error);
+				}
+			}, function (error) {
+				deferred.reject('Error in update: ' + error.responseData.statusText);
+			});
+			return deferred.promise;
+		},
 	};
 }]);
