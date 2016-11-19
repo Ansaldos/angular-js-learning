@@ -19,7 +19,12 @@ var playerController = function($scope, $http, config, playerFactory) {
 	
 	$scope.updatePlayer = function(player) {
 		playerFactory.updatePlayer(self.player).then(function(player) {
-			self.serverError = false;
+			if(player.success) {
+				self.serverError = false;
+				console.log('Post called');
+			} else {
+				self.serverError = 'Post datas failed.';
+			}	
 		}, function(error) {
 			self.serverError = error;
 		});
