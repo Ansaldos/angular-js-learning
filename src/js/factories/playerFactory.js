@@ -16,7 +16,7 @@ ihr.factory('playerFactory', ['$q', '$http', 'config', function($q, $http, confi
 			
 			return deferred.promise;
 		},
-		updatePlayer: function(){
+		updatePlayer: function(player){
 			var deferred = $q.defer();
 			
 			$http.post(this.url + '/' + player.id, player).then(function(responseData) {
