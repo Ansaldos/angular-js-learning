@@ -17,7 +17,7 @@ var playerController = function($scope, $http, config, playerFactory) {
 		self.player = player;
 	};
 	
-	$scope.updatPlayer = function(player) {
+	$scope.updatePlayer = function(player) {
 		playerFactory.updatePlayer(self.player).then(function(player) {
 			self.serverError = false;
 		}, function(error) {
