@@ -49,7 +49,7 @@
       <form>
 				<div class="modal-body">
 					<label>name</label><input type="text" data-ng-model="ctrl.player.name"></br>
-					<label>bio</label><input type="text"  data-ng-model="ctrl.player.bio"></br>
+					<label>bio</label><textarea rows="4" cols="50" data-ng-model="ctrl.player.bio"/></br>
 					<label>caps</label><input type="text" data-ng-model="ctrl.player.caps"></br>
 					<label>club</label><input type="text" data-ng-model="ctrl.player.club"></br>
 					<label>date of birth</label><input type="text" data-ng-model="ctrl.player['date of birth']"></br>
@@ -64,7 +64,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" data-ng-click="updatePlayer(ctrl.player)">update</button>
+					<button type="button" class="btn btn-primary" data-ng-click="updatePlayer(ctrl.player)" data-dismiss="modal">update</button>
 				</div>
       </form>
     </div>
