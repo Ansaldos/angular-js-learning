@@ -19,14 +19,14 @@
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Role</th>
+			<th>Bio</th>
 			<th>muvalatek</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr data-ng-class="{info: $first}" data-ng-repeat="playerItem in ctrl.players">
 			<td data-ng-bind="playerItem.name"></td>
-			<td data-ng-bind="playerItem.role"></td>
+			<td data-ng-bind="playerItem.bio"></td>
 			<td>
 				<button class="btn btn-info" data-ng-click="getPlayer(playerItem)" data-toggle="modal" data-target="#myModal">Bővebben</button>
 			</td>
@@ -64,7 +64,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-primary">update</button>
 				</div>
       </form>
     </div>
