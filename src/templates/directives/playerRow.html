@@ -1,0 +1,30 @@
+<table class="table table-striped">
+	<caption>
+	<div class="row" data-ng-show="serverError !== ''" data-ng-hide="serverError === false">
+		<div class="col-xs-12">
+			<div class="alert alert-danger">
+				<strong>Hiba: </strong> {{ serverError }}
+			</div>
+		</div>
+	</div>
+		<div class="row">
+			<div class="col-xs-3 col-xs-offset-9">
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</caption>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Role</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-class="{info: $first}" data-ng-repeat="match in matches | filter:search track by $index">
+			<td>Row</td>
+		</tr>
+	</tbody>
+	<tfoot>
+	</tfoot>
+</table>
