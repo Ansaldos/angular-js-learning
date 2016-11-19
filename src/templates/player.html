@@ -46,16 +46,27 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
-      <div class="modal-body">
-        <label data-ng-bind="player.name">ads</label><input type="text"></br>
-        <label data-ng-bind="player.name">sds</label><input type="text"></br>
-        <label data-ng-bind="player.name">dds</label><input type="text"></br>
-        <label data-ng-bind="player.name">dsf</label><input type="text"></br>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      <form>
+				<div class="modal-body">
+					<label>name</label><input type="text" data-ng-bind="player.name"></br>
+					<label>bio</label><input type="text"  data-ng-bind="player.bio"></br>
+					<label>caps</label><input type="text" data-ng-bind="player.caps"></br>
+					<label>club</label><input type="text" data-ng-bind="player.club"></br>
+					<label>date of birth</label><input type="text" data-ng-bind=player['date of birth']></br>
+					<label>goals for country</label><input type="text" data-ng-bind="player.club"></br>
+					<label>league</label><input type="text" data-ng-bind="player.club"></br>
+					<label>number</label><input type="text" data-ng-bind="player.club"></br>
+					<label>position</label><input type="text" data-ng-bind="player.club"></br>
+					<label>rating_match1</label><input type="text" data-ng-bind="player.club"></br>
+					<label>rating_match2</label><input type="text" data-ng-bind="player.club"></br>
+					<label>rating_match3</label><input type="text" data-ng-bind="player.club"></br>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+      </form>
     </div>
   </div>
 </div>
