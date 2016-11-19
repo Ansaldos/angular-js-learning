@@ -1,0 +1,51 @@
+<table class="table table-striped">
+	<caption>
+	<div class="row" data-ng-show="serverError !== ''" data-ng-hide="serverError === false">
+		<div class="col-xs-12">
+			<div class="alert alert-danger">
+				<strong>Hiba: </strong> {{ serverError }}
+			</div>
+		</div>
+	</div>
+		<div class="row">
+			<div class="col-xs-3 col-xs-offset-9">
+				<input type="text" class="form-control" data-ng-model="search.home">
+			</div>
+		</div>
+	</caption>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Home</th>
+			<th>Away</th>
+			<th>When</th>
+			<th>Type</th>
+			<th>Műveletek</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-class="{info: $first}" data-ng-repeat="match in matches | filter:search track by $index">
+			<td>{{ ($index +1) }}</td>
+			<!-- Index is provided by ng-repeat -->
+			<td>
+				<input type="text" data-ng-model="match.home"> </td>
+			<td>
+				<input type="text" data-ng-model="match.away"> </td>
+			<td>
+				<input type="text" data-ng-model="match.when"> </td>
+			<td>
+				<input type="text" data-ng-model="match.type"> </td>
+			<td>
+				<div class="btn-group">
+					<button class="btn btn-info" data-ng-click="updateRow(match)">Módosítás</button>
+					<button class="btn btn-danger" data-ng-click="deleteRow(match)">Törlés</button>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="6">Összesen: <span data-ng-bind="matches.length"></span> sor</th>
+		</tr>
+	</tfoot>
+</table>
