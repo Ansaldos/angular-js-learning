@@ -14,16 +14,16 @@ var playerController = function($scope, $http, config, playerFactory) {
 	});
 	
 	$scope.getPlayer = function(player) {
-		$event.preventDefault();
 		self.player = player;
 	};
 	
-	$scope.updatPlayer = function(player) {
-		$event.preventDefault();
-	};
-	
-	// TODO UPDATE METHOD
-	
+	$scope.updatePlayer = function(player) {
+		playerFactory.updatePlayer(self.player).then(function(player) {
+			self.serverError = false;
+		}, function(error) {
+			self.serverError = error;
+		});
+	};	
 };
 playerController.$inject = ['$scope', '$http', 'config', 'playerFactory'];
 ihr.controller('playerController', playerController);
