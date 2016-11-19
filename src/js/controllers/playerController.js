@@ -1,16 +1,26 @@
 var playerController = function($scope, $http, config, playerFactory) {
 	var self = this;
-	this.players = [];
-	this.serverError = false;
+	self.players = [];
+	self.player = {};
+	self.serverError = false;
 	
 	// Call factory's method here
-	this.players = playerFactory.getPlayers().then(function(players) {
+	self.players = playerFactory.getPlayers().then(function(players) {
 		console.log(players);
 		self.players = players;
 		self.serverError = false;
 	}, function(error) {
 		self.serverError = error;
 	});
+	
+	$scope.getPlayer = function(player) {
+		$event.preventDefault();
+		self.player = player;
+	};
+	
+	$scope.updatPlayer = function(player) {
+		$event.preventDefault();
+	};
 	
 	// TODO UPDATE METHOD
 	
