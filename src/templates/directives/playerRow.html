@@ -21,8 +21,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-ng-class="{info: $first}" data-ng-repeat="playerItem in player | filter:search track by $index">
-			<td>Row</td>
+		<tr data-ng-class="{info: $first}" data-ng-repeat="playerItem in players | filter:search track by $index">
+			<td data-ng-bind="playerItem.name"></td>
+			<td data-ng-bind="playerItem.role"></td>
+			<td>
+				<button class="btn btn-info" data-ng-click="playerRow(playerItem)">Bővebben</button>
+			</td>
 		</tr>
 	</tbody>
 	<tfoot>

@@ -1,1 +1,36 @@
-<div data-player-row data-matches='players'></div>
+<div ng-controller="playerController as ctrl" data-matches='ctrl.players'>
+	<table class="table table-striped">
+	<caption>
+	<div class="row" data-ng-show="serverError !== ''" data-ng-hide="serverError === false">
+		<div class="col-xs-12">
+			<div class="alert alert-danger">
+				<strong>Hiba: </strong> {{ serverError }}
+			</div>
+		</div>
+	</div>
+		<div class="row">
+			<div class="col-xs-3 col-xs-offset-9">
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</caption>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Role</th>
+			<th>muvalatek</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-class="{info: $first}" data-ng-repeat="playerItem in ctrl.players | filter:search track by $index">
+			<td data-ng-bind="playerItem.name"></td>
+			<td data-ng-bind="playerItem.role"></td>
+			<td>
+				<button class="btn btn-info" data-ng-click="playerRow(playerItem)">Bővebben</button>
+			</td>
+		</tr>
+	</tbody>
+	<tfoot>
+	</tfoot>
+</table>
+</div>
