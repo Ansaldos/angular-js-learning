@@ -23,10 +23,7 @@ var playerController = function($scope, $http, config, playerFactory) {
 		}, function(error) {
 			self.serverError = error;
 		});
-	};
-	
-	// TODO UPDATE METHOD
-	
+	};	
 };
 playerController.$inject = ['$scope', '$http', 'config', 'playerFactory'];
 ihr.controller('playerController', playerController);
