@@ -14,12 +14,15 @@ var playerController = function($scope, $http, config, playerFactory) {
 	});
 	
 	$scope.getPlayer = function(player) {
-		$event.preventDefault();
 		self.player = player;
 	};
 	
 	$scope.updatPlayer = function(player) {
-		$event.preventDefault();
+		playerFactory.updatePlayer(self.player).then(function(player) {
+			self.serverError = false;
+		}, function(error) {
+			self.serverError = error;
+		});
 	};
 	
 	// TODO UPDATE METHOD
